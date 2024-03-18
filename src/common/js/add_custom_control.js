@@ -7,6 +7,7 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
     'use strict';
 
     //Custom Layer Control
+    console.log("add custom control");
     var command: Object = L.control({
         position: 'topleft'
     });
@@ -17,12 +18,12 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
     var queriedYears: string = "";
 
     for (let i = 0; i < yrs_data.length; i++) {
-        queriedYears += "<option style='color:" + ((yrs_data[i].datatype === "Estimate") ? "black" : "red") + "' value='" + yrs_data[i].year + "'>" + yrs_data[i].year + "</option>";
+        queriedYears += "<option value='" + yrs_data[i].year + "'>" + yrs_data[i].year + "</option>";
     }
 
     command.onAdd = function() {
         var div = L.DomUtil.create('div', 'command bord');
-        div.innerHTML = "Statistic:<br /><select id='stat'><option value='2'>Total Population Change</option><option value='1'>Percent Population Change</option><option value='4'>Avg Population Change</option><option value='3'>Avg Pct Population Change</option><option value='5'>Birth Rate</option><option value='6'>Death Rate</option><option value='7'>Rate of Natural Increase</option><option value='8'>Migration Rate</option><option value='9'>Total Births</option><option value='10'>Total Deaths</option><option value='11'>Total Natural Increase</option><option value='12'>Total Migration</option></select><br />" +
+        div.innerHTML = "Statistic:<br /><select id='stat'><option value='9'>Total Births</option</select><br />" +
             "<br />From:&nbsp;&nbsp;<select id='selfrom'>" + queriedYears + "</select>&nbsp;&nbsp;&nbsp;To:&nbsp;&nbsp;<select id='selto'>" + queriedYears + "</select>";
         div.padding = "20px";
         return div;
@@ -100,7 +101,7 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
 
         refreshdata(layer, main_data);
     } else {
-        let e: any = document.querySelector('#selto [value="2022"]');
+        let e: any = document.querySelector('#selto [value="2024"]');
         e.selected = true;
         refreshdata(layer, main_data);
 

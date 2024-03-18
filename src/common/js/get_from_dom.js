@@ -8,8 +8,8 @@ module.exports = function() {
 
     //chicken and the egg.  if this has been called before custom control was created
     if (stat_element === null) {
-        first_year = "1970";
-        last_year = "2015";
+        first_year = "2012";
+        last_year = "2024";
         stat_val = "2";
     } else {
 

@@ -1,6 +1,6 @@
 module.exports = function(min, max, num, breaks) {
 
-
+console.log("redraw legend");
     var sig_dig = 0;
     var scaler = 1;
     var offset = 1;

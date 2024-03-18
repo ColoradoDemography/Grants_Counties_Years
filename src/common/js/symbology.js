@@ -84,6 +84,7 @@ module.exports = function(geolayer, cMap, num) {
         median = cMap.getMedianTotalDeaths();
         spreadl = median - min;
         spreadh = max - median;
+        //breaks = [(min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)))];
         breaks = [(min + spreadl * (2 / 5)), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
     }
     if (num === "11") {

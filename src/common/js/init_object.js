@@ -168,10 +168,10 @@ module.exports = function() {
 
         /* BIRTHS */
 
-        this.retrieveCountyBirths = function(fips, year) {
+        this.retrieveCountyBirths = function(fips, year) { console.log("start data");
             for (let i = 0; i < data.length; i++) {
                 if (data[i].countyfips === fips && data[i].year === year) {
-                    return Number(data[i].births);
+                    return Number(data[i].CTF);
                 }
             }
             return 0;
@@ -181,7 +181,7 @@ module.exports = function() {
         this.retrieveCountyBirthRate = function(fips, year) {
             for (let i = 0; i < data.length; i++) {
                 if (data[i].countyfips === fips && data[i].year === year) {
-                    return (Number(data[i].births) / Number(data[i].estimate)) * 1000;
+                    return (Number(data[i].CTF) / Number(data[i].CTF)) * 1000;
                 }
             }
             return 0;
