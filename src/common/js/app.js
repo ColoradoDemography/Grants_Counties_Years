@@ -11,7 +11,7 @@ var p: Promise = new Promise(function(resolve) {
     worker.onmessage = function(e) {
         resolve(e.data);
     }
-
+console.log(worker);
 });
 
 document.addEventListener("DOMContentLoaded", function() {
