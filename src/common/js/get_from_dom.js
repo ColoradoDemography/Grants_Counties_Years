@@ -10,7 +10,7 @@ module.exports = function() {
     if (stat_element === null) {
         first_year = "2012";
         last_year = "2024";
-        stat_val = "2";
+        stat_val = "9";
     } else {
 
         var from_element = document.getElementById("selfrom");

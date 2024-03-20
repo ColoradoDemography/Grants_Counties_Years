@@ -168,37 +168,37 @@ module.exports = function() {
 
         /* BIRTHS */
 
-        this.retrieveCountyBirths = function(fips, year) { console.log("start data");
+        this.retrieveCountyBBFS = function(fips, year) { console.log("start data");
             for (let i = 0; i < data.length; i++) {
                 if (data[i].countyfips === fips && data[i].year === year) {
-                    return Number(data[i].CTF);
+                    return Number(data[i].BBFS);
                 }
             }
             return 0;
         }
 
 
-        this.retrieveCountyBirthRate = function(fips, year) {
+        /* this.retrieveCountyBirthRate = function(fips, year) {
             for (let i = 0; i < data.length; i++) {
                 if (data[i].countyfips === fips && data[i].year === year) {
                     return (Number(data[i].CTF) / Number(data[i].CTF)) * 1000;
                 }
             }
             return 0;
-        }
+        } */
 
-        this.retrieveTtlBirths = function(fips) {
+        this.retrieveTtlBBFS = function(fips) {
             var running_total_births = 0;
             for (let j = (first_year + 1); j < (last_year + 1); j++) {
-                running_total_births += this.retrieveCountyBirths(fips, j);
+                running_total_births += this.retrieveCountyBBFS(fips, j);
             }
             return running_total_births;
         }
 
-        this.getMaxTtlBirths = function() {
+        this.getMaxTtlBBFS = function() {
             var max_value = -Infinity;
             for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtlBirths(fips_array[i]);
+                var current_county = this.retrieveTtlBBFS(fips_array[i]);
                 if (current_county > max_value) {
                     max_value = current_county;
                 }
@@ -206,10 +206,10 @@ module.exports = function() {
             return max_value;
         }
 
-        this.getMinTtlBirths = function() {
+        this.getMinTtlBBFS = function() {
             var min_value = Infinity;
             for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtlBirths(fips_array[i]);
+                var current_county = this.retrieveTtlBBFS(fips_array[i]);
                 if (current_county < min_value) {
                     min_value = current_county;
                 }
@@ -218,10 +218,10 @@ module.exports = function() {
         }
 
 
-        this.getMedianTotalBirths = function() {
+        this.getMedianTotalBBFS = function() {
             var values = [];
             for (let i = 0; i < fips_array.length; i++) {
-                var current_county = parseFloat(this.retrieveTtlBirths(fips_array[i]));
+                var current_county = parseFloat(this.retrieveTtlBBFS(fips_array[i]));
                 values.push(current_county);
             }
 

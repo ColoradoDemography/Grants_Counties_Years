@@ -23,9 +23,9 @@ console.log("redraw legend");
 
     var add_pct = "";
 
-    if (num === "1" || num === "3" || num === "7") {
+    /* if (num === "1" || num === "3" || num === "7") {
         add_pct = "%";
-    }
+    } */
 
 
 
@@ -104,41 +104,44 @@ console.log("redraw legend");
         htmlstring += "<tr><td style='text-align: center;'><span style='color: " + legend_components[i].rgb_string + "'>&block;</span></td><td style='text-align: right;'>" + legend_components[i].lowtext + "</td><td style='text-align: center;'>" + legend_components[i].operator + "</td><td style='text-align: left;'>" + legend_components[i].hightext + "</td></tr>";
     }
 
-    if (num === "2") {
+    /* if (num === "1") { SAMPLE
         htmlstring += "<tr><td colspan='4'>Year to year change<br/>in total population</td></tr></table>";
-    }
+    } */
     if (num === "1") {
-        htmlstring += "<tr><td colspan='4'>Percent change in population<br/>from year to year</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>BBFS</td></tr></table>";
     }
-    if (num === "4") {
-        htmlstring += "<tr><td colspan='4'>Average change in population<br/>for each year selected</td></tr></table>";
+    if (num === "2") {
+        htmlstring += "<tr><td colspan='4'>CCPI</td></tr></table>";
     }
     if (num === "3") {
-        htmlstring += "<tr><td colspan='4'>Average percent change<br/>in population<br/>for each year selected</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>CDBGCV</td></tr></table>";
+    }
+    if (num === "4") {
+        htmlstring += "<tr><td colspan='4'>CDBGED</td></tr></table>";
     }
     if (num === "5") {
-        htmlstring += "<tr><td colspan='4'>Births per 1,000 people</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>CDBGPF</td></tr></table>";
     }
     if (num === "6") {
-        htmlstring += "<tr><td colspan='4'>Deaths per 1,000 people</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>CDBGPS</td></tr></table>";
     }
     if (num === "7") {
-        htmlstring += "<tr><td colspan='4'>Difference between births<br/>and deaths per 1,000 people</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>CENS</td></tr></table>";
     }
     if (num === "8") {
-        htmlstring += "<tr><td colspan='4'>Change in population<br/>per 1,000 people<br/>due to migration</td></tr></table>";
-    }
-    if (num === "10") {
-        htmlstring += "<tr><td colspan='4'>Total number of deaths</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>CHPG</td></tr></table>";
     }
     if (num === "9") {
-        htmlstring += "<tr><td colspan='4'>Total number of births</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>CSBG</td></tr></table>";
+    }
+    if (num === "10") {
+        htmlstring += "<tr><td colspan='4'>CTF</td></tr></table>";
     }
     if (num === "11") {
-        htmlstring += "<tr><td colspan='4'>Total population change<br/>due to births and deaths</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>CVRF</td></tr></table>";
     }
     if (num === "12") {
-        htmlstring += "<tr><td colspan='4'>Total population change<br/>due to migration</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>DCFA</td></tr></table>";
     }
 
 

@@ -9,7 +9,8 @@ module.exports = function(geolayer, cMap, num) {
     var spreadh;
     var breaks = [];
 
-    if (num === "1") {
+    //Not sure this chunk is needed
+    if (num === "9") {  
         max = cMap.getMaxPctChange();
         min = cMap.getMinPctChange();
         breaks = [min * 0.5, min * 0.35, min * 0.2, min * 0.1, 0, max * 0.1, max * 0.2, max * 0.35, max * 0.5, max * 0.75];
@@ -70,10 +71,10 @@ module.exports = function(geolayer, cMap, num) {
             min = -max;
         }
     }
-    if (num === "9") {
-        max = cMap.getMaxTtlBirths();
-        min = cMap.getMinTtlBirths();
-        median = cMap.getMedianTotalBirths();
+    if (num === "1") {
+        max = cMap.getMaxTtlBBFS();
+        min = cMap.getMinTtlBBFS();
+        median = cMap.getMedianTotalBBFS();
         spreadl = median - min;
         spreadh = max - median;
         breaks = [(min + spreadl * (2 / 5)), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
@@ -110,7 +111,7 @@ module.exports = function(geolayer, cMap, num) {
         var fips = parseInt(d.properties.COUNTYFP);
 
         if (num === "1") {
-            value = cMap.retrievePctPopChg(fips);
+            value = cMap.retrieveTtlBBFS(fips);
         }
         if (num === "2") {
             value = cMap.retrieveTtlPopChg(fips);
@@ -134,7 +135,7 @@ module.exports = function(geolayer, cMap, num) {
             value = cMap.retrieveMigrationRate(fips);
         }
         if (num === "9") {
-            value = cMap.retrieveTtlBirths(fips);
+            value = cMap.retrieveTtlCSBG(fips);
         }
         if (num === "10") {
             value = cMap.retrieveTtlDeaths(fips);

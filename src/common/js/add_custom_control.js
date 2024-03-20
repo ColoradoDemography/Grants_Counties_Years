@@ -18,12 +18,24 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
     var queriedYears: string = "";
 
     for (let i = 0; i < yrs_data.length; i++) {
-        queriedYears += "<option style='color:" + ((yrs_data[i].datatype === "Estimate") ? "black" : "red") + "' value='" + yrs_data[i].year + "'>" + yrs_data[i].year + "</option>";
+        queriedYears += "<option style='color:" + ((yrs_data[i].datatype === "Estimate") ? "black" : "black") + "' value='" + yrs_data[i].year + "'>" + yrs_data[i].year + "</option>";
     }
 
     command.onAdd = function() {
         var div = L.DomUtil.create('div', 'command bord');
-        div.innerHTML = "Statistic:<br /><select id='stat'><option value='9'>Total Births</option></select><br />" +
+        div.innerHTML = "Statistic:<br /><select id='stat'><option value='1'>BBFS</option><br />" +
+            "<option value='2'>CCPI</option>"+
+            "<option value='3'>CDBGCV</option>"+
+            "<option value='4'>CDBGED</option>"+
+            "<option value='5'>CDBGPF</option>"+
+            "<option value='6'>CDBGPS</option>"+
+            "<option value='7'>CENS</option>"+
+            "<option value='8'>CHPG</option>"+
+            "<option value='9'>CSBG</option>"+
+            "<option value='10'>CTF</option>"+
+            "<option value='11'>CVRF</option>"+
+            "<option value='12'>DCFA</option>"+
+            "</select><br />" +
             "<br />From:&nbsp;&nbsp;<select id='selfrom'>" + queriedYears + "</select>&nbsp;&nbsp;&nbsp;To:&nbsp;&nbsp;<select id='selto'>" + queriedYears + "</select>";
         div.padding = "20px";
         return div;
