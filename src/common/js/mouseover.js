@@ -19,15 +19,20 @@ module.exports = function(e, worker_data) {
 
         var result_value;
 
-        if (stat === "2") {
-            result_value = cMap.retrieveTtlPopChg(fips).toLocaleString(undefined, {
+        if (stat === "1") {
+            result_value = cMap.retrieveTtl(fips,"BBFS").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "1") {
-            result_value = parseFloat(cMap.retrievePctPopChg(fips)).toLocaleString(undefined, {
-                maximumFractionDigits: 1
-            }) + " %";
+       /*  if (stat === "1") {
+            result_value = cMap.retrieveTtlBBFS(fips).toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
+        } */
+        if (stat === "2") {
+            result_value = cMap.retrieveTtlCCPI(fips).toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
         }
         if (stat === "4") {
             result_value = cMap.retrieveAvgPopChg(fips).toLocaleString(undefined, {

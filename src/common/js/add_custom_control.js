@@ -7,7 +7,6 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
     'use strict';
 
     //Custom Layer Control
-    console.log("add custom control");
     var command: Object = L.control({
         position: 'topleft'
     });

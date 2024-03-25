@@ -1,6 +1,5 @@
 module.exports = function(min, max, num, breaks) {
 
-console.log("redraw legend");
     var sig_dig = 0;
     var scaler = 1;
     var offset = 1;
@@ -32,68 +31,68 @@ console.log("redraw legend");
     //[{rgb_string, lowtext, operator, hightext}]
     var legend_components = [];
     legend_components.push({
-        rgb_string: "rgba(49, 54, 149, 0.5)",
+        rgb_string: "rgba(150,150,150, 1)",
         lowtext: "",
         operator: "<=",
         hightext: commafy((breaks[0]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(69, 117, 180, 0.5)",
+        rgb_string: "rgba(255,255,217, 1)",
         lowtext: commafy(((Math.round((breaks[0]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[1]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(116, 173, 209, 0.5)",
+        rgb_string: "rgba(237,248,177, 1)",
         lowtext: commafy(((Math.round((breaks[1]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[2]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(171, 217, 233, 0.5)",
+        rgb_string: "rgba(199,233,180, 1)",
         lowtext: commafy(((Math.round((breaks[2]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[3]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(224, 243, 248, 0.5)",
+        rgb_string: "rgba(127,205,187, 1)",
         lowtext: commafy(((Math.round((breaks[3]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[4]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(255, 255, 191, 0.5)",
+        rgb_string: "rgba(65,182,196, 1)",
         lowtext: commafy(((Math.round((breaks[4]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[5]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(254, 224, 144, 0.5)",
+        rgb_string: "rgba(29,145,192, 1)",
         lowtext: commafy(((Math.round((breaks[5]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[6]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(253, 174, 97, 0.5)",
+        rgb_string: "rgba(34,94,168, 1)",
         lowtext: commafy(((Math.round((breaks[6]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[7]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
-        rgb_string: "rgba(244, 109, 67, 0.5)",
+        rgb_string: "rgba(37,52,148, 1)",
         lowtext: commafy(((Math.round((breaks[7]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[8]).toFixed(sig_dig)) + add_pct
     });
-    legend_components.push({
-        rgb_string: "rgba(215, 48, 39, 0.5)",
+    /* legend_components.push({
+        rgb_string: "rgba(215, 48, 39, 1)",
         lowtext: commafy(((Math.round((breaks[8]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
         hightext: commafy((breaks[9]).toFixed(sig_dig)) + add_pct
-    });
+    }); */
     legend_components.push({
-        rgb_string: "rgba(165, 0, 38, 0.5)",
-        lowtext: commafy(((Math.round((breaks[9]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        rgb_string: "rgba(8,29,88, 1)",
+        lowtext: commafy(((Math.round((breaks[8]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "+",
         hightext: ""
     });
