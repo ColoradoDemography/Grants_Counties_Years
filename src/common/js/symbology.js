@@ -182,14 +182,14 @@ module.exports = function(geolayer, cMap, num) {
 
         var value;
         var fips = parseInt(d.properties.COUNTYFP);
-
-        if (num === "1") {
-            value = cMap.retrieveTtl(fips,"BBFS");
-        }
+        value = cMap.retrieveTtl(fips,Number(num));
         /* if (num === "1") {
             value = cMap.retrieveTtlBBFS(fips);
         } */
-        if (num === "2") {
+        /* if (num === "1") {
+            value = cMap.retrieveTtlBBFS(fips);
+        } */
+        /* if (num === "2") {
             value = cMap.retrieveTtlCCPI(fips);
         }
         if (num === "3") {
@@ -221,7 +221,7 @@ module.exports = function(geolayer, cMap, num) {
         }
         if (num === "12") {
             value = cMap.retrieveTtlDCFA(fips);
-        }
+        } */
 
         //console.log(breaks[9]);
         if ((value > (-Infinity)) && (value <= breaks[0])) {

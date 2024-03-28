@@ -691,6 +691,7 @@ module.exports = function() {
         }
 
         this.retrieveTtl = function(fips,program) {
+            var getfunction = "retrieve"+program+"Ttl";
             var running_total_births = 0;
             for (let j = (first_year + 1); j < (last_year + 1); j++) {
                 running_total_births += this.retrieveCountyTtl(fips, j, program);
