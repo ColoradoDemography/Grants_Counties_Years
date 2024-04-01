@@ -107,40 +107,40 @@ module.exports = function(min, max, num, breaks) {
         htmlstring += "<tr><td colspan='4'>Year to year change<br/>in total population</td></tr></table>";
     } */
     if (num === "1") {
-        htmlstring += "<tr><td colspan='4'>BBFS</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Broadband Grant</td></tr></table>";
     }
     if (num === "2") {
-        htmlstring += "<tr><td colspan='4'>CCPI</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Crime</td></tr><tr><td colspan='4'>Prevention Initiative</td></tr></table>";
     }
     if (num === "3") {
-        htmlstring += "<tr><td colspan='4'>CDBGCV</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>COVID</td></tr></table>";
     }
     if (num === "4") {
-        htmlstring += "<tr><td colspan='4'>CDBGED</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>Economic Development</td></tr></table>";
     }
     if (num === "5") {
-        htmlstring += "<tr><td colspan='4'>CDBGPF</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>PF</td></tr></table>";
     }
     if (num === "6") {
-        htmlstring += "<tr><td colspan='4'>CDBGPS</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>PS</td></tr></table>";
     }
     if (num === "7") {
-        htmlstring += "<tr><td colspan='4'>CENS</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Census Outreach Grants</td></tr></table>";
     }
     if (num === "8") {
-        htmlstring += "<tr><td colspan='4'>CHPG</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Colorado Heritage</td></tr><tr><td colspan='4'>Planning Grants</td></tr></table>";
     }
     if (num === "9") {
-        htmlstring += "<tr><td colspan='4'>CSBG</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Services</td></tr><tr><td colspan='4'>Block Grants</td></tr></table>";
     }
     if (num === "10") {
-        htmlstring += "<tr><td colspan='4'>CTF</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Conservation Trust Fund</td></tr></table>";
     }
     if (num === "11") {
-        htmlstring += "<tr><td colspan='4'>CVRF</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Coronavirus Relief Funds</td></tr></table>";
     }
     if (num === "12") {
-        htmlstring += "<tr><td colspan='4'>DCFA</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Defense Counsel on</td></tr><tr><td colspan='4'>First Appearance</td></tr></table>";
     }
 
 

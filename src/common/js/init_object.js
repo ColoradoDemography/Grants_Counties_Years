@@ -682,38 +682,42 @@ module.exports = function() {
         }
 
         this.retrieveCountyTtl = function(fips, year, program) {
+            
             for (let i = 0; i < data.length; i++) {
                 if (data[i].countyfips === fips && data[i].year === year) {
-                    return Number(data[i].BBFS);
+                    return Number(data[i][program]);
                 }
             }
             return 0;
         }
 
         this.retrieveTtl = function(fips,program) {
-            var getfunction = "retrieve"+program+"Ttl";
+            
             var running_total_births = 0;
             for (let j = (first_year + 1); j < (last_year + 1); j++) {
                 running_total_births += this.retrieveCountyTtl(fips, j, program);
             }
+            
             return running_total_births;
         }
 
-        this.getMaxTtl = function() {
+        this.getMaxTtl = function(program) {
             var max_value = -Infinity;
             for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtl(fips_array[i]);
+                var current_county = this.retrieveTtl(fips_array[i],program);
+                console.log(current_county);
                 if (current_county > max_value) {
                     max_value = current_county;
                 }
             }
+            
             return max_value;
         }
 
-        this.getMinTtl = function() {
+        this.getMinTtl = function(program) {
             var min_value = Infinity;
             for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtl(fips_array[i]);
+                var current_county = this.retrieveTtl(fips_array[i],program);
                 if (current_county < min_value) {
                     min_value = current_county;
                 }
@@ -722,10 +726,10 @@ module.exports = function() {
         }
 
 
-        this.getMedianTotal = function() {
+        this.getMedianTotal = function(program) {
             var values = [];
             for (let i = 0; i < fips_array.length; i++) {
-                var current_county = parseFloat(this.retrieveTtl(fips_array[i]));
+                var current_county = parseFloat(this.retrieveTtl(fips_array[i],program));
                 values.push(current_county);
             }
 

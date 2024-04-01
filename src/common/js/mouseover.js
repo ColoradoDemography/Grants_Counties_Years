@@ -30,58 +30,58 @@ module.exports = function(e, worker_data) {
             });
         } */
         if (stat === "2") {
-            result_value = cMap.retrieveTtlCCPI(fips).toLocaleString(undefined, {
-                maximumFractionDigits: 0
-            });
-        }
-        if (stat === "4") {
-            result_value = cMap.retrieveAvgPopChg(fips).toLocaleString(undefined, {
+            result_value = cMap.retrieveTtl(fips,"CCPI").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
         if (stat === "3") {
-            result_value = parseFloat(cMap.retrieveAvgPctPopChg(fips)).toLocaleString(undefined, {
-                maximumFractionDigits: 1
-            }) + " %";
+            result_value = cMap.retrieveTtl(fips,"CDBGCV").toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
         }
-        if (stat === "9") {
-            result_value = cMap.retrieveTtlBirths(fips).toLocaleString(undefined, {
+        if (stat === "4") {
+            result_value = cMap.retrieveTtl(fips,"CDBGED").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
         if (stat === "5") {
-            result_value = cMap.retrieveBirthRate(fips).toLocaleString(undefined, {
-                maximumFractionDigits: 1
-            });
-        }
-        if (stat === "10") {
-            result_value = cMap.retrieveTtlDeaths(fips).toLocaleString(undefined, {
+            result_value = cMap.retrieveTtl(fips,"CDBGPF").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
         if (stat === "6") {
-            result_value = cMap.retrieveDeathRate(fips).toLocaleString(undefined, {
-                maximumFractionDigits: 1
-            });
-        }
-        if (stat === "11") {
-            result_value = cMap.retrieveNatIncrease(fips).toLocaleString(undefined, {
+            result_value = cMap.retrieveTtl(fips,"CDBGPS").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
         if (stat === "7") {
-            result_value = cMap.retrieveRateNaturalIncrease(fips).toLocaleString(undefined, {
-                maximumFractionDigits: 2
-            }) + " %";
-        }
-        if (stat === "12") {
-            result_value = cMap.retrieveTtlMigration(fips).toLocaleString(undefined, {
+            result_value = cMap.retrieveTtl(fips,"CENS").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
         if (stat === "8") {
-            result_value = cMap.retrieveMigrationRate(fips).toLocaleString(undefined, {
-                maximumFractionDigits: 1
+            result_value = cMap.retrieveTtl(fips,"CHPG").toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
+        }
+        if (stat === "9") {
+            result_value = cMap.retrieveTtl(fips,"CSBG").toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
+        }
+        if (stat === "10") {
+            result_value = cMap.retrieveTtl(fips,"CTF").toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
+        }
+        if (stat === "11") {
+            result_value = cMap.retrieveTtl(fips,"CVRF").toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
+        }
+        if (stat === "12") {
+            result_value = cMap.retrieveTtl(fips,"DCFA").toLocaleString(undefined, {
+                maximumFractionDigits: 0
             });
         }
 

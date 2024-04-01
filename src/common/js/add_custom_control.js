@@ -22,20 +22,21 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
 
     command.onAdd = function() {
         var div = L.DomUtil.create('div', 'command bord');
-        div.innerHTML = "Statistic:<br /><select id='stat'><option value='1'>BBFS</option><br />" +
-            "<option value='2'>CCPI</option>"+
-            "<option value='3'>CDBGCV</option>"+
-            "<option value='4'>CDBGED</option>"+
-            "<option value='5'>CDBGPF</option>"+
-            "<option value='6'>CDBGPS</option>"+
-            "<option value='7'>CENS</option>"+
-            "<option value='8'>CHPG</option>"+
-            "<option value='9'>CSBG</option>"+
-            "<option value='10'>CTF</option>"+
-            "<option value='11'>CVRF</option>"+
-            "<option value='12'>DCFA</option>"+
+        div.innerHTML = "Grant Program:<br /><select id='stat'><option value='1'>Broadband Grants</option><br />" +
+            "<option value='2'>Community Crime Prevention Initiative</option>"+
+            "<option value='3'>Community Development Block Grants - CV</option>"+
+            "<option value='4'>Community Development Block Grants - ED</option>"+
+            "<option value='5'>Community Development Block Grants - PF</option>"+
+            "<option value='6'>Community Development Block Grants - PS</option>"+
+            "<option value='7'>Census Outreach Grants</option>"+
+            "<option value='8'>Colorado Heritage Planning Grants</option>"+
+            "<option value='9'>Community Services Block Grants</option>"+
+            "<option value='10'>Conservation Trust Fund</option>"+
+            "<option value='11'>Coronavirus Relief Funds</option>"+
+            "<option value='12'>Defense Counsel on First Appearance</option>"+
             "</select><br />" +
-            "<br />From:&nbsp;&nbsp;<select id='selfrom'>" + queriedYears + "</select>&nbsp;&nbsp;&nbsp;To:&nbsp;&nbsp;<select id='selto'>" + queriedYears + "</select>";
+            "<br />From:&nbsp;&nbsp;<select id='selfrom'>" + queriedYears + "</select>&nbsp;&nbsp;&nbsp;To:&nbsp;&nbsp;<select id='selto'>" + queriedYears + "</select><br />"+
+            "<p><a href=https://storage.googleapis.com/co-publicdata/grants.csv>Download the grants data</a></p>";
         div.padding = "20px";
         return div;
     };
