@@ -15,11 +15,11 @@ module.exports = function(e, worker_data) {
 
         var cMap = new CMap(data);
         var fips = parseInt(e.target.feature.properties.COUNTYFP, 10);
-        var stat = string_output[1];
+        var granttype = string_output[2];
 
         var result_value;
 
-        if (stat === "1") {
+        if (granttype === "1") {
             result_value = cMap.retrieveTtl(fips,"BBFS").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
@@ -29,57 +29,57 @@ module.exports = function(e, worker_data) {
                 maximumFractionDigits: 0
             });
         } */
-        if (stat === "2") {
+        if (granttype  === "2") {
             result_value = cMap.retrieveTtl(fips,"CCPI").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "3") {
+        if (granttype  === "3") {
             result_value = cMap.retrieveTtl(fips,"CDBGCV").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "4") {
+        if (granttype  === "4") {
             result_value = cMap.retrieveTtl(fips,"CDBGED").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "5") {
+        if (granttype  === "5") {
             result_value = cMap.retrieveTtl(fips,"CDBGPF").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "6") {
+        if (granttype  === "6") {
             result_value = cMap.retrieveTtl(fips,"CDBGPS").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "7") {
+        if (granttype  === "7") {
             result_value = cMap.retrieveTtl(fips,"CENS").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "8") {
+        if (granttype  === "8") {
             result_value = cMap.retrieveTtl(fips,"CHPG").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "9") {
+        if (granttype  === "9") {
             result_value = cMap.retrieveTtl(fips,"CSBG").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "10") {
+        if (granttype  === "10") {
             result_value = cMap.retrieveTtl(fips,"CTF").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "11") {
+        if (granttype  === "11") {
             result_value = cMap.retrieveTtl(fips,"CVRF").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });
         }
-        if (stat === "12") {
+        if (granttype  === "12") {
             result_value = cMap.retrieveTtl(fips,"DCFA").toLocaleString(undefined, {
                 maximumFractionDigits: 0
             });

@@ -23,7 +23,8 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
     command.onAdd = function() {
         var div = L.DomUtil.create('div', 'command bord');
         div.innerHTML = "Statistic:<br /><select id='stat'><option value='1'>Grant Totals</option><option value='2'>Percent of State Grants</option></select><br />" +
-        "Grant Program:<br /><select id='granttype'><option value='1'>Broadband Grants</option><br />" +
+        "<br />From:&nbsp;&nbsp;<select id='selfrom'>" + queriedYears + "</select>&nbsp;&nbsp;&nbsp;To:&nbsp;&nbsp;<select id='selto'>" + queriedYears + "</select><br />"+
+        "<br />Grant Program:<br /><select id='granttype'><option value='1'>Broadband Grants</option><br />" +
             "<option value='2'>Community Crime Prevention Initiative</option>"+
             "<option value='3'>Community Development Block Grants - CV</option>"+
             "<option value='4'>Community Development Block Grants - ED</option>"+
@@ -36,7 +37,7 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
             "<option value='11'>Coronavirus Relief Funds</option>"+
             "<option value='12'>Defense Counsel on First Appearance</option>"+
             "</select><br />" +
-            "<br />From:&nbsp;&nbsp;<select id='selfrom'>" + queriedYears + "</select>&nbsp;&nbsp;&nbsp;To:&nbsp;&nbsp;<select id='selto'>" + queriedYears + "</select><br />"+
+            
             "<p><a href=https://storage.googleapis.com/co-publicdata/grants.csv>Download the grants data</a></p>";
         div.padding = "20px";
         return div;
@@ -95,11 +96,11 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
     //intialize!
     var querystring = getJsonFromUrl();
 
-    if ('print' in querystring && 'stat' in querystring && 'from' in querystring && 'to' in querystring) {
+    if ('print' in querystring && 'granttype' in querystring && 'from' in querystring && 'to' in querystring) {
 
         map.panTo(L.latLng(39.35, -104.3));
 
-        let e: any = document.querySelector('#stat [value="' + querystring.stat + '"]');
+        let e: any = document.querySelector('#granttype [value="' + querystring.stat + '"]');
         e.selected = true;
         let f: any = document.querySelector('#selfrom [value="' + querystring.from + '"]');
         f.selected = true;
@@ -108,13 +109,13 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
         document.getElementsByClassName('command')[0].style.display = 'none';
         document.getElementsByClassName('leaflet-top leaflet-right')[0].style.display = 'none';
 
-        let stat_select: any = document.getElementById('stat');
-        let stat_text: any = stat_select.options[stat_select.selectedIndex].text;
+        let grant_select: any = document.getElementById('granttype');
+        let grant_text: any = grant_select.options[grant_select.selectedIndex].text;
 
         let title_h2 = document.querySelector('.title h2');
         let selfrom: any = document.getElementById("selfrom");
         let selto: any = document.getElementById("selto");
-        title_h2.innerHTML = "Colorado, " + selfrom.value + " to " + selto.value + ":&nbsp;&nbsp;" + stat_text;
+        title_h2.innerHTML = "Colorado, " + selfrom.value + " to " + selto.value + ":&nbsp;&nbsp;" + grant_text;
 
         refreshdata(layer, main_data);
     } else {

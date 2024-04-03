@@ -1,24 +1,26 @@
 module.exports = function() {
 
+    var stat_val = "";
     var first_year = "";
     var last_year = "";
-    var stat_val = "";
+    var grant_val = "";
 
-    var stat_element = document.getElementById("granttype");
+    var grant_element = document.getElementById("granttype"); 
 
     //chicken and the egg.  if this has been called before custom control was created
-    if (stat_element === null) {
+    if (grant_element === null) {
+        stat_val = "1";
         first_year = "2012";
         last_year = "2024";
-        stat_val = "9";
+        grant_val = "1";
     } else {
-
+        var stat_val = document.getElementById("stat");
         var from_element = document.getElementById("selfrom");
         var to_element = document.getElementById("selto");
 
         first_year = parseInt(from_element.options[from_element.selectedIndex].value);
         last_year = parseInt(to_element.options[to_element.selectedIndex].value);
-        stat_val = stat_element.options[stat_element.selectedIndex].value;
+        grant_val = grant_element.options[grant_element.selectedIndex].value;
     }
 
     var yearset = "";
@@ -34,6 +36,6 @@ module.exports = function() {
         yearset = String(first_year)
     }
 
-    return [yearset, stat_val]
+    return [stat_val, yearset, grant_val]
 
 }
