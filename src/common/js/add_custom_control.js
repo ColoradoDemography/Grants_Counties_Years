@@ -22,7 +22,8 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
 
     command.onAdd = function() {
         var div = L.DomUtil.create('div', 'command bord');
-        div.innerHTML = "Grant Program:<br /><select id='stat'><option value='1'>Broadband Grants</option><br />" +
+        div.innerHTML = "Statistic:<br /><select id='stat'><option value='1'>Grant Totals</option><option value='2'>Percent of State Grants</option></select><br />" +
+        "Grant Program:<br /><select id='granttype'><option value='1'>Broadband Grants</option><br />" +
             "<option value='2'>Community Crime Prevention Initiative</option>"+
             "<option value='3'>Community Development Block Grants - CV</option>"+
             "<option value='4'>Community Development Block Grants - ED</option>"+
@@ -44,6 +45,10 @@ module.exports = function(map: Object, layer: Object, worker_data: any) {
 
 
     document.getElementById("stat").addEventListener("change", function() {
+        refreshdata(layer, main_data);
+    }, false);
+
+    document.getElementById("granttype").addEventListener("change", function() {
         refreshdata(layer, main_data);
     }, false);
 

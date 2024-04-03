@@ -4,7 +4,7 @@ module.exports = function() {
 
     var CMap = function(data) {
 
-        var fips_array = [1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125];
+        var fips_array = [1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 500];
 
         this.data = data;
 
@@ -166,7 +166,7 @@ module.exports = function() {
             return min_value;
         } */
 
-        /* BBFS */
+        /* BBFS 
 
         this.retrieveCountyBBFS = function(fips, year) { 
             for (let i = 0; i < data.length; i++) {
@@ -175,7 +175,7 @@ module.exports = function() {
                 }
             }
             return 0;
-        }
+        }*/
 
 
         /* this.retrieveCountyBirthRate = function(fips, year) {
@@ -565,120 +565,35 @@ module.exports = function() {
 
         /* BBFS */
 
-        this.retrieveCountyCCPI = function(fips, year) { 
+        this.retrieveTtlGrants = function(year, program) {
+            var allgrants = 0;
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].countyfips === 500 && data[i].year === year) {
+                    allgrants = allgrants + parseInt(data[i][program]);
+                }
+            }
+            return allgrants;
+        }
+
+        this.retrievePctGrants = function(fips, program, year) {
+            var stategrants = 0;
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].countyfips === 500 && data[i].year === year) {
+                    stategrants = stategrants + parseInt(data[i][program]);
+                }
+            }
+            var countygrants = 0
             for (let i = 0; i < data.length; i++) {
                 if (data[i].countyfips === fips && data[i].year === year) {
-                    return Number(data[i].CCPI);
+                    countygrants = countygrants + parseInt(data[i][program]);
                 }
             }
-            return 0;
-        }
-
-        this.retrieveTtlCCPI = function(fips) {
-            var running_total_births = 0;
-            for (let j = (first_year + 1); j < (last_year + 1); j++) {
-                running_total_births += this.retrieveCountyCCPI(fips, j);
+            var pctgrants = ((countygrants / stategrants) * 100).toFixed(2);
+            if (isFinite(pctgrants)) {
+                return pctgrants;
+            } else {
+                return 0;
             }
-            return running_total_births;
-        }
-
-        this.getMaxTtlCCPI = function() {
-            var max_value = -Infinity;
-            for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtlCCPI(fips_array[i]);
-                if (current_county > max_value) {
-                    max_value = current_county;
-                }
-            }
-            return max_value;
-        }
-
-        this.getMinTtlCCPI = function() {
-            var min_value = Infinity;
-            for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtlCCPI(fips_array[i]);
-                if (current_county < min_value) {
-                    min_value = current_county;
-                }
-            }
-            return min_value;
-        }
-
-
-        this.getMedianTotalCCPI = function() {
-            var values = [];
-            for (let i = 0; i < fips_array.length; i++) {
-                var current_county = parseFloat(this.retrieveTtlCCPI(fips_array[i]));
-                values.push(current_county);
-            }
-
-            values.sort(function(a, b) {
-                return a - b;
-            });
-
-            var half = Math.floor(values.length / 2);
-            if (values.length % 2)
-                return values[half];
-            else
-                return (values[half - 1] + values[half]) / 2.0;
-        }
-
-        this.retrieveCountyCDBGPV = function(fips, year) { 
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].countyfips === fips && data[i].year === year) {
-                    return Number(data[i].CCPI);
-                }
-            }
-            return 0;
-        }
-
-        this.retrieveTtlCDBGPV = function(fips) {
-            var running_total_births = 0;
-            for (let j = (first_year + 1); j < (last_year + 1); j++) {
-                running_total_births += this.retrieveCountyCDBGPV(fips, j);
-            }
-            return running_total_births;
-        }
-
-        this.getMaxTtlCDBGPV = function() {
-            var max_value = -Infinity;
-            for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtlCDBGCV(fips_array[i]);
-                if (current_county > max_value) {
-                    max_value = current_county;
-                }
-            }
-            return max_value;
-        }
-
-        this.getMinTtlCDBGCV = function() {
-            var min_value = Infinity;
-            for (let i = 0; i < fips_array.length; i++) {
-                var current_county = this.retrieveTtlCDBGCV(fips_array[i]);
-                if (current_county < min_value) {
-                    min_value = current_county;
-                }
-            }
-            return min_value;
-        }
-
-
-        this.getMedianTotalCDBGCV = function() {
-            var values = [];
-            for (let i = 0; i < fips_array.length; i++) {
-                var current_county = parseFloat(this.retrieveTtlCDBGCV(fips_array[i]));
-                values.push(current_county);
-            }
-
-            values.sort(function(a, b) {
-                return a - b;
-            });
-
-            var half = Math.floor(values.length / 2);
-            if (values.length % 2)
-                return values[half];
-            else
-                return (values[half - 1] + values[half]) / 2.0;
         }
 
         this.retrieveCountyTtl = function(fips, year, program) {

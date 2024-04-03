@@ -4,7 +4,7 @@ module.exports = function() {
     var last_year = "";
     var stat_val = "";
 
-    var stat_element = document.getElementById("stat");
+    var stat_element = document.getElementById("granttype");
 
     //chicken and the egg.  if this has been called before custom control was created
     if (stat_element === null) {
