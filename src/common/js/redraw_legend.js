@@ -1,8 +1,13 @@
+var getUserInputs = require("./get_from_dom.js");
+
 module.exports = function(min, max, num, breaks) {
+
+    var string_output = getUserInputs();
+    var stat = string_output[0];
 
     var sig_dig = 0;
     var scaler = 1;
-    var offset = 1;
+    var offset = 0;
 
     if (max < 100) {
         sig_dig = 1;
@@ -19,23 +24,23 @@ module.exports = function(min, max, num, breaks) {
         scaler = 1000;
         offset = 0.001;
     }
-
+ 
     var add_pct = "";
 
-    /* if (num === "1" || num === "3" || num === "7") {
+    if (stat === "2") {
         add_pct = "%";
-    } */
+    }
 
 
 
     //[{rgb_string, lowtext, operator, hightext}]
-    var legend_components = [];
+    var legend_components = []; 
     legend_components.push({
         rgb_string: "rgba(150,150,150, 1)",
         lowtext: "",
         operator: "<=",
         hightext: commafy((breaks[0]).toFixed(sig_dig)) + add_pct
-    });
+    });console.log(breaks[0]);console.log(breaks[1]);
     legend_components.push({
         rgb_string: "rgba(255,255,217, 1)",
         lowtext: commafy(((Math.round((breaks[0]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,

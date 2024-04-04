@@ -9,7 +9,7 @@ module.exports = function(e, worker_data, map) {
     var string_output = getUserInputs();
 
 
-    filterData(worker_data, string_output[0], function(data) {
+    filterData(worker_data, string_output[1], function(data) {
 
         var cMap = new CMap(data);
 

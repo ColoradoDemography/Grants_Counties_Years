@@ -575,7 +575,7 @@ module.exports = function() {
             return allgrants;
         }
 
-        this.retrievePctGrants = function(fips, program, year) {
+        /* this.retrievePctGrants = function(fips, program, year) {
             var stategrants = 0;
             for (let i = 0; i < data.length; i++) {
                 if (data[i].countyfips === 500 && data[i].year === year) {
@@ -594,6 +594,68 @@ module.exports = function() {
             } else {
                 return 0;
             }
+        } */
+
+        this.retrievePctGrants = function(fips, program) {
+            var running_total_grants = 0;
+            for (let j = (first_year); j < (last_year + 1); j++) {
+                running_total_grants += this.retrieveCountyTtl(fips, j, program);
+            }
+
+            var running_state_grants = 0;
+            for (let j = (first_year); j < (last_year + 1); j++) {
+                running_state_grants += this.retrieveCountyTtl(500, j, program);
+            }
+
+            var pctgrants = ((running_total_grants / running_state_grants) * 100).toFixed(2);
+            if (isFinite(pctgrants)) {
+                return pctgrants;
+            } else {
+                return 0;
+            }
+        }
+
+        this.getMaxPct = function(program) {
+            var max_value = -Infinity;
+            for (let i = 0; i < fips_array.length; i++) {
+                var current_county = parseFloat(this.retrievePctGrants(fips_array[i], program));
+                if (current_county > max_value) {
+                    max_value = current_county;
+                }
+            }
+            //var max_pct = (max_value * 100).toFixed(2);
+            //return max_pct;
+            return max_value;
+        }
+
+        this.getMinPct = function(program) {
+            var min_value = Infinity;
+            for (let i = 0; i < fips_array.length; i++) {
+                var current_county = parseFloat(this.retrievePctGrants(fips_array[i], program));
+                if (current_county < min_value) {
+                    min_value = current_county;
+                }
+            }
+            //var min_pct = (min_value * 100).toFixed(2);
+            //return min_pct;
+            return min_value;
+        }
+        this.getMedianPct = function(program) {
+            var values = [];
+            for (let i = 0; i < fips_array.length; i++) {
+                var current_county = parseFloat(this.retrievePctGrants(fips_array[i], program));
+                values.push(current_county);
+            }
+
+            values.sort(function(a, b) {
+                return a - b;
+            });
+
+            var half = Math.floor(values.length / 2);
+            if (values.length % 2)
+                return values[half];
+            else
+                return (values[half - 1] + values[half]) / 2.0;
         }
 
         this.retrieveCountyTtl = function(fips, year, program) {
@@ -608,19 +670,19 @@ module.exports = function() {
 
         this.retrieveTtl = function(fips,program) {
             
-            var running_total_births = 0;
+            var running_total_grants = 0;
             for (let j = (first_year); j < (last_year + 1); j++) {
-                running_total_births += this.retrieveCountyTtl(fips, j, program);
+                running_total_grants += this.retrieveCountyTtl(fips, j, program);
             }
             
-            return running_total_births;
+            return running_total_grants;
+
         }
 
         this.getMaxTtl = function(program) {
             var max_value = -Infinity;
             for (let i = 0; i < fips_array.length; i++) {
                 var current_county = this.retrieveTtl(fips_array[i],program);
-                console.log(current_county);
                 if (current_county > max_value) {
                     max_value = current_county;
                 }
@@ -658,6 +720,37 @@ module.exports = function() {
             else
                 return (values[half - 1] + values[half]) / 2.0;
         }
+
+        
+        /* this.getMinTtl = function(program) {
+            var min_value = Infinity;
+            for (let i = 0; i < fips_array.length; i++) {
+                var current_county = this.retrieveTtl(fips_array[i],program);
+                if (current_county < min_value) {
+                    min_value = current_county;
+                }
+            }
+            return min_value;
+        }
+
+
+        this.getMedianTotal = function(program) {
+            var values = [];
+            for (let i = 0; i < fips_array.length; i++) {
+                var current_county = parseFloat(this.retrieveTtl(fips_array[i],program));
+                values.push(current_county);
+            }
+
+            values.sort(function(a, b) {
+                return a - b;
+            });
+
+            var half = Math.floor(values.length / 2);
+            if (values.length % 2)
+                return values[half];
+            else
+                return (values[half - 1] + values[half]) / 2.0;
+        } */
     }
 
 
