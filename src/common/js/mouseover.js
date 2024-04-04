@@ -11,14 +11,15 @@ module.exports = function(e, worker_data) {
     var string_output = getUserInputs();
 
 
-    filterData(worker_data, string_output[0], function(data) {
+    filterData(worker_data, string_output[1], function(data) {
 
         var cMap = new CMap(data);
         var fips = parseInt(e.target.feature.properties.COUNTYFP, 10);
         var granttype = string_output[2];
+        var stat = string_output[0]; 
 
         var result_value;
-
+if (stat === "1"){
         if (granttype === "1") {
             result_value = cMap.retrieveTtl(fips,"BBFS").toLocaleString(undefined, {
                 maximumFractionDigits: 0
@@ -84,7 +85,7 @@ module.exports = function(e, worker_data) {
                 maximumFractionDigits: 0
             });
         }
-
+    }
         document.getElementById('caption_control').innerHTML = "<p>" + e.target.feature.properties.NAME + ":&nbsp;&nbsp;&nbsp;" + result_value + "</p>";
 
 

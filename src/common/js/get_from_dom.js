@@ -14,10 +14,11 @@ module.exports = function() {
         last_year = "2024";
         grant_val = "1";
     } else {
-        var stat_val = document.getElementById("stat");
+        var stat_element = document.getElementById("stat");
         var from_element = document.getElementById("selfrom");
         var to_element = document.getElementById("selto");
 
+        stat_val = stat_element.options[stat_element.selectedIndex].value;
         first_year = parseInt(from_element.options[from_element.selectedIndex].value);
         last_year = parseInt(to_element.options[to_element.selectedIndex].value);
         grant_val = grant_element.options[grant_element.selectedIndex].value;

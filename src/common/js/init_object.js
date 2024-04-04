@@ -609,7 +609,7 @@ module.exports = function() {
         this.retrieveTtl = function(fips,program) {
             
             var running_total_births = 0;
-            for (let j = (first_year + 1); j < (last_year + 1); j++) {
+            for (let j = (first_year); j < (last_year + 1); j++) {
                 running_total_births += this.retrieveCountyTtl(fips, j, program);
             }
             
