@@ -4,12 +4,21 @@ module.exports = function(min, max, num, breaks) {
 
     var string_output = getUserInputs();
     var stat = string_output[0];
-
     var sig_dig = 0;
     var scaler = 1;
     var offset = 0;
-
-    if (max < 100) {
+    var dollarsign = "";
+    var add_pct = "";
+   
+    if (stat === "1"){
+        sig_dig = 0;
+        scaler = 1;
+        offset = 0;
+        dollarsign = "$";
+        add_pct = "";
+    }
+       
+    /* if (max < 100) {
         sig_dig = 1;
         scaler = 10;
         offset = 0.1;
@@ -23,12 +32,16 @@ module.exports = function(min, max, num, breaks) {
         sig_dig = 3;
         scaler = 1000;
         offset = 0.001;
-    }
+    } */
  
-    var add_pct = "";
+    
 
     if (stat === "2") {
         add_pct = "%";
+        sig_dig = 2;
+        scaler = 100;
+        offset = 0.01;
+        dollarsign = "";
     }
 
 
@@ -39,55 +52,55 @@ module.exports = function(min, max, num, breaks) {
         rgb_string: "rgba(150,150,150, 1)",
         lowtext: "",
         operator: "<=",
-        hightext: commafy((breaks[0]).toFixed(sig_dig)) + add_pct
-    });console.log(breaks[0]);console.log(breaks[1]);
+        hightext: dollarsign + commafy((breaks[0]).toFixed(sig_dig)) + add_pct
+    });
     legend_components.push({
         rgb_string: "rgba(255,255,217, 1)",
-        lowtext: commafy(((Math.round((breaks[0]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[0]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[1]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[1]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
         rgb_string: "rgba(237,248,177, 1)",
-        lowtext: commafy(((Math.round((breaks[1]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[1]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[2]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[2]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
         rgb_string: "rgba(199,233,180, 1)",
-        lowtext: commafy(((Math.round((breaks[2]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[2]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[3]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[3]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
         rgb_string: "rgba(127,205,187, 1)",
-        lowtext: commafy(((Math.round((breaks[3]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[3]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[4]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[4]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
         rgb_string: "rgba(65,182,196, 1)",
-        lowtext: commafy(((Math.round((breaks[4]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[4]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[5]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[5]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
         rgb_string: "rgba(29,145,192, 1)",
-        lowtext: commafy(((Math.round((breaks[5]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[5]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[6]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[6]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
         rgb_string: "rgba(34,94,168, 1)",
-        lowtext: commafy(((Math.round((breaks[6]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[6]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[7]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[7]).toFixed(sig_dig)) + add_pct
     });
     legend_components.push({
         rgb_string: "rgba(37,52,148, 1)",
-        lowtext: commafy(((Math.round((breaks[7]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[7]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "to",
-        hightext: commafy((breaks[8]).toFixed(sig_dig)) + add_pct
+        hightext: dollarsign + commafy((breaks[8]).toFixed(sig_dig)) + add_pct
     });
     /* legend_components.push({
         rgb_string: "rgba(215, 48, 39, 1)",
@@ -97,7 +110,7 @@ module.exports = function(min, max, num, breaks) {
     }); */
     legend_components.push({
         rgb_string: "rgba(8,29,88, 1)",
-        lowtext: commafy(((Math.round((breaks[8]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
+        lowtext: dollarsign + commafy(((Math.round((breaks[8]) * scaler) / scaler) + offset).toFixed(sig_dig)) + add_pct,
         operator: "+",
         hightext: ""
     });
@@ -112,22 +125,22 @@ module.exports = function(min, max, num, breaks) {
         htmlstring += "<tr><td colspan='4'>Year to year change<br/>in total population</td></tr></table>";
     } */
     if (num === "1") {
-        htmlstring += "<tr><td colspan='4'>Broadband Grant</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Broadband Grants</td></tr></table>";
     }
     if (num === "2") {
         htmlstring += "<tr><td colspan='4'>Community Crime</td></tr><tr><td colspan='4'>Prevention Initiative</td></tr></table>";
     }
     if (num === "3") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>COVID</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>COVID</td></tr></table>";
     }
     if (num === "4") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>Economic Development</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>Economic Development</td></tr></table>";
     }
     if (num === "5") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>PF</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>PF</td></tr></table>";
     }
     if (num === "6") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grant -</td></tr><tr><td colspan='4'>PS</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>PS</td></tr></table>";
     }
     if (num === "7") {
         htmlstring += "<tr><td colspan='4'>Census Outreach Grants</td></tr></table>";

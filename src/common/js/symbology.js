@@ -253,7 +253,7 @@ module.exports = function(geolayer, cMap, num) {
                 weight: 13,
                 color: "blue",
                 fillOpacity: 0
-            }; //hey you; there's a problem
+            }; 
 
         });
 
@@ -268,92 +268,92 @@ module.exports = function(geolayer, cMap, num) {
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
-        console.log("max="+max);console.log(min);console.log(median);console.log(spreadl);console.log(spreadh);
+        
         }
         if (num === "2") {
-            max = cMap.getMaxTtl("CCPI");
-            min = cMap.getMinTtl("CCPI");
-            median = cMap.getMedianTotal("CCPI");
+            max = cMap.getMaxPct("CCPI");
+            min = cMap.getMinPct("CCPI");
+            median = cMap.getMedianPct("CCPI");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "3") {
-            max = cMap.getMaxTtl("CDBGCV");
-            min = cMap.getMinTtl("CDBGCV");
-            median = cMap.getMedianTotal("CDBGCV");
+            max = cMap.getMaxPct("CDBGCV");
+            min = cMap.getMinPct("CDBGCV");
+            median = cMap.getMedianPct("CDBGCV");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "4") {
-            max = cMap.getMaxTtl("CDBGED");
-            min = cMap.getMinTtl("CDBGED");
-            median = cMap.getMedianTotal("CDBGED");
+            max = cMap.getMaxPct("CDBGED");
+            min = cMap.getMinPct("CDBGED");
+            median = cMap.getMedianPct("CDBGED");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "5") {
-            max = cMap.getMaxTtl("CDBGPF");
-            min = cMap.getMinTtl("CDBGPF");
-            median = cMap.getMedianTotal("CDBGPF");
+            max = cMap.getMaxPct("CDBGPF");
+            min = cMap.getMinPct("CDBGPF");
+            median = cMap.getMedianPct("CDBGPF");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "6") {
-            max = cMap.getMaxTtl("CDBGPS");
-            min = cMap.getMinTtl("CDBGPS");
-            median = cMap.getMedianTotal("CDBGPS");
+            max = cMap.getMaxPct("CDBGPS");
+            min = cMap.getMinPct("CDBGPS");
+            median = cMap.getMedianPct("CDBGPS");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "7") {
-            max = cMap.getMaxTtl("CENS");
-            min = cMap.getMinTtl("CENS");
-            median = cMap.getMedianTotal("CENS");
+            max = cMap.getMaxPct("CENS");
+            min = cMap.getMinPct("CENS");
+            median = cMap.getMedianPct("CENS");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "8") {
-            max = cMap.getMaxTtl("CHPG");
-            min = cMap.getMinTtl("CHPG");
-            median = cMap.getMedianTotal("CHPG");
+            max = cMap.getMaxPct("CHPG");
+            min = cMap.getMinPct("CHPG");
+            median = cMap.getMedianPct("CHPG");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "9") {
-            max = cMap.getMaxTtl("CSBG");
-            min = cMap.getMinTtl("CSBG");
-            median = cMap.getMedianTotal("CSBG");
+            max = cMap.getMaxPct("CSBG");
+            min = cMap.getMinPct("CSBG");
+            median = cMap.getMedianPct("CSBG");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "10") {
-            max = cMap.getMaxTtl("CTF");
-            min = cMap.getMinTtl("CTF");
-            median = cMap.getMedianTotal("CTF");
+            max = cMap.getMaxPct("CTF");
+            min = cMap.getMinPct("CTF");
+            median = cMap.getMedianPct("CTF");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "11") {
-            max = cMap.getMaxTtl("CVRF");
-            min = cMap.getMinTtl("CVRF");
-            median = cMap.getMedianTotal("CVRF");
+            max = cMap.getMaxPct("CVRF");
+            min = cMap.getMinPct("CVRF");
+            median = cMap.getMedianPct("CVRF");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
         }
         if (num === "12") {
-            max = cMap.getMaxTtl("DCFA");
-            min = cMap.getMinTtl("DCFA");
-            median = cMap.getMedianTotal("DCFA");
+            max = cMap.getMaxPct("DCFA");
+            min = cMap.getMinPct("DCFA");
+            median = cMap.getMedianPct("DCFA");
             spreadl = median - min;
             spreadh = max - median;
             breaks = [(0), (min + spreadl * (3 / 5)), (min + spreadl * (4 / 5)), (min + spreadl * (9 / 10)), median, (median + spreadh * (1 / 12)), (median + spreadh * (1 / 6)), (median + spreadh * (2 / 6)), (median + spreadh * (3 / 6)), (median + spreadh * (4 / 6))];
@@ -372,47 +372,47 @@ module.exports = function(geolayer, cMap, num) {
             } 
             if (num === "2") {
                 var program = "CCPI";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             }
             if (num === "3") {
                 var program = "CDBGCV";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "4") {
                 var program = "CDBGED";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "5") {
                 var program = "CDBGPF";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "6") {
                 var program = "CDBGPS";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "7") {
                 var program = "CENS";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "8") {
                 var program = "CHPG";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "9") {
                 var program = "CSBG";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "10") {
                 var program = "CTF";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "11") {
                 var program = "CVRF";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             } 
             if (num === "12") {
                 var program = "DCFA";
-                value = cMap.retrieveTtl(fips,program);
+                value = cMap.retrievePctGrants(fips,program);
             }  
         
             if ((value > (-Infinity)) && (value <= breaks[0])) {

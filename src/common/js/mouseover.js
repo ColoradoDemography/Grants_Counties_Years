@@ -93,58 +93,58 @@ module.exports = function(e, worker_data) {
             });
         }
         if (granttype  === "2") {
-            result_value = cMap.retrieveTtl(fips,"CCPI").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CCPI").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "3") {
-            result_value = cMap.retrieveTtl(fips,"CDBGCV").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CDBGCV").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "4") {
-            result_value = cMap.retrieveTtl(fips,"CDBGED").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CDBGED").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "5") {
-            result_value = cMap.retrieveTtl(fips,"CDBGPF").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CDBGPF").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "6") {
-            result_value = cMap.retrieveTtl(fips,"CDBGPS").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CDBGPS").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "7") {
-            result_value = cMap.retrieveTtl(fips,"CENS").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CENS").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "8") {
-            result_value = cMap.retrieveTtl(fips,"CHPG").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CHPG").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "9") {
-            result_value = cMap.retrieveTtl(fips,"CSBG").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CSBG").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "10") {
-            result_value = cMap.retrieveTtl(fips,"CTF").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CTF").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "11") {
-            result_value = cMap.retrieveTtl(fips,"CVRF").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"CVRF").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         if (granttype  === "12") {
-            result_value = cMap.retrieveTtl(fips,"DCFA").toLocaleString(undefined, {
-                maximumFractionDigits: 0
+            result_value = cMap.retrievePctGrants(fips,"DCFA").toLocaleString(undefined, {
+                maximumFractionDigits: 2
             });
         }
         document.getElementById('caption_control').innerHTML = "<p>" + e.target.feature.properties.NAME + ":&nbsp;&nbsp;&nbsp;" + result_value + "%</p>";
