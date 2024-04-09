@@ -125,43 +125,117 @@ module.exports = function(min, max, num, breaks) {
         htmlstring += "<tr><td colspan='4'>Year to year change<br/>in total population</td></tr></table>";
     } */
     if (num === "1") {
-        htmlstring += "<tr><td colspan='4'>Broadband Grants</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>American Rescue</td></tr><tr><td colspan='4'>Plan Act: NEU</td></tr></table>";
     }
     if (num === "2") {
-        htmlstring += "<tr><td colspan='4'>Community Crime</td></tr><tr><td colspan='4'>Prevention Initiative</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Broadband Grants</td></tr></table>";
     }
     if (num === "3") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>COVID</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Crime</td></tr><tr><td colspan='4'>Prevention Initiative</td></tr></table>";
     }
     if (num === "4") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>Economic Development</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants - COVID</td></tr></table>";
     }
     if (num === "5") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>PF</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants - Economic Development</td></tr></table>";
     }
     if (num === "6") {
-        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants -</td></tr><tr><td colspan='4'>PS</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants - PF</td></tr></table>";
     }
     if (num === "7") {
-        htmlstring += "<tr><td colspan='4'>Census Outreach Grants</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Community Development</td></tr><tr><td colspan='4'>Block Grants - PS</td></tr></table>";
     }
     if (num === "8") {
-        htmlstring += "<tr><td colspan='4'>Colorado Heritage</td></tr><tr><td colspan='4'>Planning Grants</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Census Outreach Grants</td></tr></table>";
     }
     if (num === "9") {
-        htmlstring += "<tr><td colspan='4'>Community Services</td></tr><tr><td colspan='4'>Block Grants</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Colorado Heritage</td></tr><tr><td colspan='4'>Planning Grants</td></tr></table>";
     }
     if (num === "10") {
-        htmlstring += "<tr><td colspan='4'>Conservation Trust Fund</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Colorado Search &</td></tr><tr><td colspan='4'>Rescue</td></tr></table>";
     }
     if (num === "11") {
-        htmlstring += "<tr><td colspan='4'>Coronavirus Relief Funds</td></tr></table>";
+        htmlstring += "<tr><td colspan='4'>Colorado Search & Rescue</td></tr><tr><td colspan='4'>Flexible Fund</td></tr></table>";
     }
     if (num === "12") {
+        htmlstring += "<tr><td colspan='4'>Community Services</td></tr><tr><td colspan='4'>Block Grants</td></tr></table>";
+    }
+    if (num === "13") {
+        htmlstring += "<tr><td colspan='4'>Conservation</td></tr><tr><td colspan='4'>Trust Fund</td></tr></table>";
+    }
+    if (num === "14") {
+        htmlstring += "<tr><td colspan='4'>Coronavirus</td></tr><tr><td colspan='4'>Relief Funds</td></tr></table>";
+    }
+    if (num === "15") {
         htmlstring += "<tr><td colspan='4'>Defense Counsel on</td></tr><tr><td colspan='4'>First Appearance</td></tr></table>";
     }
-
-
+    if (num === "16") {
+        htmlstring += "<tr><td colspan='4'>Direct Distribution</td></tr></table>";
+    }
+    if (num === "17") {
+        htmlstring += "<tr><td colspan='4'>Energy Impact</td></tr><tr><td colspan='4'>Assistance Fund</td></tr></table>";
+    }
+    if (num === "18") {
+        htmlstring += "<tr><td colspan='4'>Firefighter</td></tr><tr><td colspan='4'>Cardiac Benefit</td></tr></table>";
+    }
+    if (num === "19") {
+        htmlstring += "<tr><td colspan='4'>Housing Incentive</td></tr><tr><td colspan='4'>Grants</td></tr></table>";
+    }
+    if (num === "20") {
+        htmlstring += "<tr><td colspan='4'>Housing Planning</td></tr><tr><td colspan='4'>Grants</td></tr></table>";
+    }
+    if (num === "21") {
+        htmlstring += "<tr><td colspan='4'>Limited Gaming Impact</td></tr></table>";
+    }
+    if (num === "22") {
+        htmlstring += "<tr><td colspan='4'>Local Grant Match</td></tr></table>";
+    }
+    if (num === "23") {
+        htmlstring += "<tr><td colspan='4'>Local Planning</td></tr><tr><td colspan='4'>Capacity Grants</td></tr></table>";
+    }
+    if (num === "24") {
+        htmlstring += "<tr><td colspan='4'>Main Street</td></tr></table>";
+    }
+    if (num === "25") {
+        htmlstring += "<tr><td colspan='4'>Main Street:</td></tr><tr><td colspan='4'>Open for Business</td></tr></table>";
+    }
+    if (num === "26") {
+        htmlstring += "<tr><td colspan='4'>Marijuana Enforcement</td></tr><tr><td colspan='4'>Grey & Black Market</td></tr></table>";
+    }
+    if (num === "27") {
+        htmlstring += "<tr><td colspan='4'>Marijuana Impact</td></tr></table>";
+    }
+    if (num === "28") {
+        htmlstring += "<tr><td colspan='4'>Microgrids for</td></tr><tr><td colspan='4'>Community Resilience</td></tr></table>";
+    }
+    if (num === "29") {
+        htmlstring += "<tr><td colspan='4'>Migrant Response</td></tr</table>";
+    }
+    if (num === "30") {
+        htmlstring += "<tr><td colspan='4'>Peace Officer</td></tr><tr><td colspan='4'>Mental Health Support</td></tr></table>";
+    }
+    if (num === "31") {
+        htmlstring += "<tr><td colspan='4'>Pools Special</td></tr><tr><td colspan='4'>Initiative</td></tr></table>";
+    }
+    if (num === "32") {
+        htmlstring += "<tr><td colspan='4'>Rural Economic</td></tr><tr><td colspan='4'>Development Initiative</td></tr></table>";
+    }
+    if (num === "33") {
+        htmlstring += "<tr><td colspan='4'>Small Business</td></tr><tr><td colspan='4'>Relief</td></tr></table>";
+    }
+    if (num === "34") {
+        htmlstring += "<tr><td colspan='4'>Solar Grants</td></tr></table>";
+    }
+    if (num === "35") {
+        htmlstring += "<tr><td colspan='4'>Strong Communities</td></tr><tr><td colspan='4'>Grants</td></tr></table>";
+    }
+    if (num === "36") {
+        htmlstring += "<tr><td colspan='4'>Volunteer Firefighter</td></tr><tr><td colspan='4'>Pension Fund</td></tr></table>";
+    }
+    /* if (num === "37") {
+        htmlstring += "<tr><td colspan='4'>Volunteer Firefighter</td></tr><tr><td colspan='4'>Pension Fund</td></tr></table>";                               
+    } */
+    
     var legend = document.getElementById('legend-control');
     legend.innerHTML = htmlstring;
 
