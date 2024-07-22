@@ -61,7 +61,7 @@ module.exports = function(e, worker_data, map) {
             maximumFractionDigits: 0}) + "</td></tr>";
         info_html += "<tr><td>Colorado Search & Rescue:</td><td style='text-align: right'>" + parseInt(cMap.retrieveTtl(fips, "SAR")).toLocaleString(undefined, {
             maximumFractionDigits: 0}) + 
-            "</td><td style='border-left: 1px solid black'>Microgrids for Community Resiliennce:</td><td style='text-align: right'>" + parseInt(cMap.retrieveTtl(fips, "MCRG")).toLocaleString(undefined, {
+            "</td><td style='border-left: 1px solid black'>Microgrids for Community Resilience:</td><td style='text-align: right'>" + parseInt(cMap.retrieveTtl(fips, "MCRG")).toLocaleString(undefined, {
             maximumFractionDigits: 0}) + "</td></tr>";
         info_html += "<tr><td>Colorado Search & Rescue Flexible Fund:</td><td style='text-align: right'>" + parseInt(cMap.retrieveTtl(fips, "BSARFX")).toLocaleString(undefined, {
             maximumFractionDigits: 0}) + 
