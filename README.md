@@ -1,6 +1,6 @@
-# ComponentsOfChange
-Colorado State Demography Office Components of Change WebMap
+# Grants_County_Years
+Colorado State Demography Office Grants WebMap - Internal
 
-Replacing this:  https://dola.colorado.gov/gis-php/files/projects/components/componentsv6.html
+Map to show the distribution of different grant types to counties by range of years.
 
-with a modern version that talks to the DOLA database and updates automatically with each year's new data.
+Data is fed by R script Grants_Scheduled_R, which runs every Tuesday when the host computer is connected to the DOLA network.
